@@ -38,42 +38,44 @@ const SignUp = () => {
   };
 
   return (
+    <div className="bg-slate-900 h-[calc(100vh-4.05rem)]">
     <div className="p-3 max-w-lg mx-auto">
-      <h1 className="text-3xl text-center font-semibold m-7">SignUp</h1>
+      <h1 className="text-3xl text-center font-semibold m-7 text-slate-200 mb-12 mt-12">SignUp</h1>
       <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Username"
           id="username"
-          className="bg-slate-100 p-3 rounded-lg"
+          className="bg-slate-600 text-white p-3 rounded-lg"
           onChange={handleChange}
         />
         <input
           type="email"
           placeholder="Email"
           id="email"
-          className="bg-slate-100 p-3 rounded-lg"
+          className="bg-slate-600  text-white p-3 rounded-lg"
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="Password"
           id="password"
-          className="bg-slate-100 p-3 rounded-lg"
+          className="bg-slate-600  text-white p-3 rounded-lg"
           onChange={handleChange}
         />
-        <button className="bg-slate-700 text-white rounded-lg uppercase p-3 hover:placeholder-opacity-95 disabled:opacity-80" disabled={loading}>
+        <button className="bg-blue-900 text-white rounded-lg uppercase p-3 hover:placeholder-opacity-95 disabled:opacity-80" disabled={loading}>
           {loading ? "Loading...": "Sign Up"}
         </button>
         <OAuth />
       </form>
-      <div className="flex gap-2 mt-5">
+      <div className="flex gap-2 mt-5 text-slate-200">
         <p>Have an account?</p>
         <Link to="/sign-in">
-          <span className="text-blue-500">Sign in</span>
+          <span className="text-blue-300">Sign in</span>
         </Link>
       </div>
-      <p className="text-red-800 mt-5">{error && "Something went wrong"}</p>
+      <p className="text-red-400 mt-5">{error && "Something went wrong"}</p>
+    </div>
     </div>
   );
 };
